@@ -43,6 +43,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
-                .userDetailsService(username -> readerRepository.findOne(username));
+                .userDetailsService(username -> readerRepository.getOne(username));
     }
 }
